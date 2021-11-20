@@ -1,0 +1,18 @@
+﻿<h1>Все заказы</h1>
+<h3>@Model.CurrPerson</h3>
+<div class="row mt-5 mb-2"> @{/*отступ сверху и снизу*/ }
+    @{
+        foreach (var product in Model.AllProducts)
+        {
+        <div class="col-lg-4">
+            @{/*количество колонок занимаемых блоком (из 12)*/ }
+            <h1>Задача: @product.Description </h1>
+            <img class="img-thumbnail" src="@product.Img" alt="@product.Id" />
+            <p>Цена: @product.Price.ToString("c") </p>
+            <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+        </div>
+
+        }
+
+    }
+</div>
